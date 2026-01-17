@@ -16,7 +16,7 @@ export const Register = async (formData : FormData) => {
          throw new Error('User already Exist')
     }
 
-    const hashPassword = bcrypt.hash(password as string  , 10)
+    const hashPassword = await bcrypt.hash(password as string  , 10)
 
     const user = await User.create({
         name,

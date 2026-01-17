@@ -18,7 +18,7 @@ export const Login = async (formData : FormData) =>{
     if(!isExist){
         throw error('First create your account')
     }
-    const checkPassword = bcrypt.compare(password ,isExist.password)
+    const checkPassword = await bcrypt.compare(password ,isExist.password)
     if(!checkPassword) {
         throw error('wrong password')
     }
