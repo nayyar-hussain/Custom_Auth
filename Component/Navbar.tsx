@@ -1,5 +1,6 @@
 "use client"
 
+import { logoutUser } from '@/app/server.action/Logout'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import React from 'react'
@@ -15,7 +16,7 @@ function Navbar() {
           <Link href={'/dashboard'}>Dashboard</Link>
         </div>
         <div>
-          <Button>LOGOUT</Button>
+          <Button onClick={logoutUser}>LOGOUT</Button>
         </div>
          </div>
     </nav>

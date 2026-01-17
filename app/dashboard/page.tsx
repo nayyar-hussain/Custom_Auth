@@ -4,6 +4,8 @@ import User from '@/Model/User'
 import { IUser, IUserDocu } from '@/types/User-type'
 import React from 'react'
 
+export const dynamic = 'force-dynamic'
+
 async function page() {
  await ConnectToDatabase()
   const userDoc = await User.find()
