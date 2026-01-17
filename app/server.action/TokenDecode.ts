@@ -1,4 +1,5 @@
 "use server"
+import { ConnectToDatabase } from '@/lib/Database';
 import User from '@/Model/User';
 import jwt from 'jsonwebtoken'
 import { cookies } from "next/headers";
@@ -12,7 +13,7 @@ export const DocodeToken = async () => {
 
   const decodeId = jwt.verify(token, process.env.JSON_WEB_TOKEN_SECRET!) as{id : string}
   const userId = decodeId.id
-
+  await ConnectToDatabase()
   const user = await User.findOne({_id : userId})
   return user
 
