@@ -25,7 +25,7 @@ export const Login = async (formData : FormData) =>{
     }
 
     const token = jwt.sign(
-        {id : isExist._id.toString},
+        {id : isExist._id.toString()},
         process.env.JSON_WEB_TOKEN_SECRET!,
         {expiresIn : '7d'}
     )
