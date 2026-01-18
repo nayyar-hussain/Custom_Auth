@@ -13,6 +13,7 @@ function Navbar() {
        
         <div className='space-x-2'>
           <Link href={'/login'}>Login</Link>
+          <Link href={'/'}>Register</Link>
           <Link href={'/dashboard'}>Dashboard</Link>
         </div>
         <div>

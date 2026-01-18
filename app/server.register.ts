@@ -5,6 +5,7 @@ import User from "@/Model/User"
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import { cookies } from "next/headers"
+import { redirect } from "next/navigation"
 export const Register = async (formData : FormData) => {
     const name = formData.get('name')
     const email = formData.get('email')
@@ -38,5 +39,7 @@ export const Register = async (formData : FormData) => {
         sameSite : 'lax',
         path : '/'
     })
+
+    redirect('/login')
 
 }
